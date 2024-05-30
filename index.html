@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>하이브리드 이미징 1차 과제</title>
     <link rel="stylesheet" href="">
+    <style>video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        video::-webkit-media-controls-enclosure {
+            display: none !important;
+        }
+
+        video::-webkit-media-controls-panel {
+            display: none !important;
+        }
+
+        video::-webkit-media-controls-play-button {
+            display: none !important;
+        }
+
+        video::-webkit-media-controls-start-playback-button {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
     <input type="button" name="real time" value="real time" onclick="window.location.href = window.location.href;"><br>
@@ -25,6 +45,9 @@
             console.log('Auto-play was prevented:', error);
             });
         });
+
+ 			// 비디오 컨트롤바 숨기기 위한 CSS 클래스 추가
+        video.classList.add('no-controls');
 
         	// 본래 재생되던 비디오를 변경된 비디오로 '재생' 시켜주는 코드
     function changeVideo(newSrc) {
